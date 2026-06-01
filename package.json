@@ -19,7 +19,6 @@
     "@types/three": "^0.174.0",
     "gsap": "^3.12.7",
     "lightningcss": "^1.29.2",
-    "lightningcss-darwin-arm64": "^1.29.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-responsive": "^10.0.1",
