@@ -48,12 +48,11 @@ const AppShowcase = () => {
         <div className="showcaselayout">
           <div ref={impactAiRef} className="first-project-wrapper">
             <div className="image-wrapper">
-              <img src={asset("images/project1.png")} alt="Impact AI Platform" />
+              <img src={asset("images/impact-ai.webp")} alt="Impact AI Platform" />
             </div>
             <div className="text-content">
               <h2>
-                AI-Powered Platform to Monitor and Analyze AI Products — Including
-                the Hera Project with ESA &amp; Microsoft
+                AI-Powered Platform to Monitor and Analyze AI Products
               </h2>
               <p className="text-white-50 md:text-xl">
                 Built with Next.js, HeroUI, Storybook, and a monorepo architecture
@@ -64,20 +63,21 @@ const AppShowcase = () => {
 
           <div className="project-list-wrapper overflow-hidden">
             <div className="project" ref={flightioRef}>
-              <div className="image-wrapper bg-[#FFEFDB]">
+              <div className="image-wrapper bg-[#2A2D35]">
                 <img
-                  src={asset("images/project2.png")}
-                  alt="Flightio Platform Rebuild"
+                  src={asset("images/hera.png")}
+                  alt="Hera Project with ESA &amp; Microsoft"
                 />
               </div>
-              <h2>Flightio Platform Rebuild</h2>
+              <h2>Hera Project with ESA &amp; Microsoft</h2>
             </div>
 
             <div className="project" ref={arshRef}>
               <div className="image-wrapper bg-[#FFE7EB]">
-                <img src={asset("images/project3.png")} alt="Arsh Meeting Planner" />
+                <img src={asset("images/gennova-image.png")} alt="Gennova" />
               </div>
-              <h2>Arsh Meeting Planner with Jalali Calendar</h2>
+              <h2>AI Social Media
+              Post Creator with Gennova</h2>
             </div>
           </div>
         </div>

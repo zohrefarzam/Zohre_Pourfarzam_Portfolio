@@ -1,44 +1,38 @@
-import { useRef, useState } from "react";
-import emailjs from "@emailjs/browser";
-
+import { useMemo } from "react";
+import QRCode from "react-qr-code";
 import TitleHeader from "../components/TitleHeader";
-import ContactExperience from "../components/models/contact/ContactExperience";
 import { asset } from "../utils/asset";
 
+const resumePdfPath = asset("pdf/Zohre_Pourfarzam_Resume.pdf");
+
+const contactLinks = [
+  {
+    label: "Email",
+    value: "zohrefarzam@gmail.com",
+    href: "https://mail.google.com/mail/?view=cm&fs=1&to=zohrefarzam@gmail.com",
+    external: true,
+  },
+  {
+    label: "Phone",
+    value: "+98 902 199 9724",
+    href: "tel:+989021999724",
+  },
+  {
+    label: "GitHub",
+    value: "github.com/zohrefarzam",
+    href: "https://github.com/zohrefarzam",
+    external: true,
+  },
+];
+
 const Contact = () => {
-  const formRef = useRef(null);
-  const [loading, setLoading] = useState(false);
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setForm({ ...form, [name]: value });
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true); // Show loading state
-
-    try {
-      await emailjs.sendForm(
-        import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
-        formRef.current,
-        import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
-      );
-
-      // Reset form and stop loading
-      setForm({ name: "", email: "", message: "" });
-    } catch (error) {
-      console.error("EmailJS Error:", error); // Optional: show toast
-    } finally {
-      setLoading(false); // Always stop loading, even on error
-    }
-  };
+  const resumeUrl = useMemo(
+    () =>
+      typeof window !== "undefined"
+        ? `${window.location.origin}${resumePdfPath}`
+        : resumePdfPath,
+    []
+  );
 
   return (
     <section id="contact" className="flex-center section-padding">
@@ -47,90 +41,83 @@ const Contact = () => {
           title="Get in Touch – Let's Connect"
           sub="💬 Have questions or ideas? Let's talk! 🚀"
         />
-        <div className="grid-12-cols mt-16">
-          <div className="xl:col-span-5">
-            <div className="flex-center card-border rounded-xl p-10">
-              <div className="mb-8 text-white-50">
-                <p className="md:text-lg">
-                  <a
-                    href="mailto:zohrefarzam@gmail.com"
-                    className="hover:text-white transition-colors"
-                  >
-                    zohrefarzam@gmail.com
-                  </a>
-                </p>
-                <p className="md:text-lg mt-2">
-                  <a
-                    href="https://github.com/zohrefarzam"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-white transition-colors"
-                  >
-                    github.com/zohrefarzam
-                  </a>
-                </p>
-              </div>
-              <form
-                ref={formRef}
-                onSubmit={handleSubmit}
-                className="w-full flex flex-col gap-7"
-              >
-                <div>
-                  <label htmlFor="name">Your name</label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={form.name}
-                    onChange={handleChange}
-                    placeholder="What’s your good name?"
-                    required
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="email">Your Email</label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={form.email}
-                    onChange={handleChange}
-                    placeholder="What’s your email address?"
-                    required
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="message">Your Message</label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={form.message}
-                    onChange={handleChange}
-                    placeholder="How can I help you?"
-                    rows="5"
-                    required
-                  />
-                </div>
-
-                <button type="submit">
-                  <div className="cta-button group">
-                    <div className="bg-circle" />
-                    <p className="text">
-                      {loading ? "Sending..." : "Send Message"}
+        <div className="grid-12-cols mt-16 items-stretch">
+          <div className="xl:col-span-6 min-h-[32rem]">
+            <div className="card-border rounded-3xl p-8 md:p-10 h-full flex flex-col justify-center gap-8">
+              <p className="text-white-50 md:text-xl">
+                Prefer to reach out directly? Click below to email or call me.
+              </p>
+              <ul className="flex flex-col gap-8">
+                {contactLinks.map((link) => (
+                  <li key={link.label}>
+                    <p className="text-sm uppercase tracking-widest text-blue-50 mb-2">
+                      {link.label}
                     </p>
-                    <div className="arrow-wrapper">
-                      <img src={asset("images/arrow-down.svg")} alt="arrow" />
-                    </div>
-                  </div>
-                </button>
-              </form>
+                    <a
+                      href={link.href}
+                      {...(link.external
+                        ? { target: "_blank", rel: "noopener noreferrer" }
+                        : {})}
+                      className="group inline-flex items-center gap-3 text-xl md:text-2xl font-semibold text-white transition-colors hover:text-white-50"
+                    >
+                      <span className="relative break-all">
+                        {link.value}
+                        <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-white transition-all duration-300 group-hover:w-full" />
+                      </span>
+                      <img
+                        src={asset("images/arrow-down.svg")}
+                        alt=""
+                        className="size-5 shrink-0 -rotate-90 opacity-60 transition-transform duration-300 group-hover:translate-x-1 group-hover:opacity-100"
+                      />
+                    </a>
+                  </li>
+                ))}
+              </ul>
+
+              <div className="mt-2 pt-8 border-t border-black-50 flex flex-col sm:flex-row items-start sm:items-center gap-6">
+                <div className="rounded-2xl bg-white p-3 shadow-sm">
+                  <QRCode
+                    value={resumeUrl}
+                    size={128}
+                    bgColor="#ffffff"
+                    fgColor="#000000"
+                    level="M"
+                    title="Scan to download resume"
+                  />
+                </div>
+                <div className="flex flex-col gap-3">
+                  <p className="text-sm uppercase tracking-widest text-blue-50">
+                    Resume
+                  </p>
+                  <p className="text-white-50 text-base md:text-lg max-w-xs">
+                    Scan the QR code with your phone to download my resume PDF.
+                  </p>
+                  <a
+                    href={resumePdfPath}
+                    download="Zohre_Pourfarzam_Resume.pdf"
+                    className="group inline-flex items-center gap-3 text-lg font-semibold text-white transition-colors hover:text-white-50 w-fit"
+                  >
+                    <span className="relative">
+                      Download PDF
+                      <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-white transition-all duration-300 group-hover:w-full" />
+                    </span>
+                    <img
+                      src={asset("images/arrow-down.svg")}
+                      alt=""
+                      className="size-5 shrink-0 opacity-60 transition-transform duration-300 group-hover:translate-y-1 group-hover:opacity-100"
+                    />
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
-          <div className="xl:col-span-7 min-h-96">
-            <div className="bg-[#cd7c2e] w-full h-full hover:cursor-grab rounded-3xl overflow-hidden">
-              <ContactExperience />
+          <div className="xl:col-span-6 min-h-[32rem]">
+            <div className="bg-[#ea6db3] w-full h-full rounded-3xl overflow-hidden flex-center">
+              <img
+                src={asset("images/zohre.png")}
+                alt="Zohre Pourfarzam"
+                className="max-h-[420px] w-auto object-contain"
+              />
             </div>
           </div>
         </div>

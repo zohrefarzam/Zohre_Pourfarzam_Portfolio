@@ -52,7 +52,7 @@ const Hero = () => {
             </div>
 
             <p className="text-white-50 md:text-xl relative z-10 pointer-events-none max-w-xl leading-relaxed">
-              Hi, I&apos;m Zohre Pourfarzam, a Senior React Developer with 5+
+              Hi, I&apos;m Zohre Pourfarzam, a Senior React Developer with 6+
               years of experience.
               <br />
               Building scalable web and mobile applications with React, Next.js,
@@ -62,7 +62,7 @@ const Hero = () => {
             <Button
               text="See My Work"
               className="md:w-80 md:h-16 w-60 h-12"
-              id="counter"
+              id="work"
             />
           </div>
         </header>
@@ -75,7 +75,7 @@ const Hero = () => {
         </figure>
       </div>
 
-      <AnimatedCounter />
+      {/* <AnimatedCounter /> */}
     </section>
   );
 };

@@ -40,19 +40,38 @@ const counterItems = [
 const logoIconsList = [
   {
     name: "Impact AI",
-    imgPath: asset("images/logo1.png"),
+    imgPath: asset("images/logos/impactAi-logo.webp"),
+    imgClassName: "h-9 md:h-11",
   },
   {
-    name: "Flightio",
-    imgPath: asset("images/logo2.png"),
+    name: "Hera",
+    imgPath: asset("images/logos/Hera-logo.webp"),
+    imgClassName: "h-10 md:h-12",
+  },
+  {
+    name: "Microsoft",
+    imgPath: asset("images/logos/company-logo-2.png"),
+    imgClassName: "h-8 md:h-10",
+  },
+  {
+    name: "ESA",
+    imgPath: asset("images/logos/ESA-logo-white.webp"),
+    imgClassName: "h-9 md:h-11",
+  },
+  {
+    name: "Gennova",
+    imgPath: asset("images/logos/gennova.png"),
+    imgClassName: "h-10 md:h-12",
   },
   {
     name: "Arsh",
-    imgPath: asset("images/logo3.png"),
+    imgPath: asset("images/logos/arsh.png"),
+    imgClassName: "h-14 md:h-16",
   },
   {
-    name: "Inotec",
-    imgPath: asset("images/logo4.png"),
+    name: "Flightio",
+    imgPath: asset("images/logos/flightio.png"),
+    imgClassName: "h-10 md:h-10",
   },
 ];
 
@@ -80,20 +99,84 @@ const techStackImgs = [
     imgPath: asset("images/logos/react.png"),
   },
   {
-    name: "TypeScript",
-    imgPath: asset("images/code.svg"),
+    name: "NestJS",
+    imgPath: asset("images/logos/nestjs.svg"),
   },
   {
     name: "React Native",
     imgPath: asset("images/logos/react.png"),
   },
   {
-    name: "Tailwind CSS",
-    imgPath: asset("images/designs.svg"),
+    name: "Node.js / Express",
+    imgPath: asset("images/logos/node.png"),
   },
   {
-    name: "GraphQL / Node.js",
-    imgPath: asset("images/logos/node.png"),
+    name: "WordPress",
+    imgPath: asset("images/logos/wordpress.svg"),
+  },
+];
+
+const skillCategories = [
+  {
+    id: "languages",
+    title: "Languages",
+    skills: [
+      { name: "JavaScript (ES6+)", level: "core" },
+      { name: "TypeScript", level: "core" },
+    ],
+  },
+  {
+    id: "frameworks",
+    title: "Frameworks & Libraries",
+    skills: [
+      { name: "React.js", level: "core" },
+      { name: "Next.js", level: "core" },
+      { name: "NestJS", level: "strong" },
+      { name: "React Native", level: "strong" },
+      { name: "React Query", level: "strong" },
+      { name: "Redux Toolkit", level: "strong" },
+      { name: "Redux-Saga", level: "working" },
+    ],
+  },
+  {
+    id: "styling",
+    title: "Styling",
+    skills: [
+      { name: "HTML5", level: "core" },
+      { name: "CSS3", level: "core" },
+      { name: "Tailwind CSS", level: "core" },
+      { name: "LESS", level: "working" },
+      { name: "Sass", level: "working" },
+    ],
+  },
+  {
+    id: "architecture",
+    title: "Architecture & Integration",
+    skills: [
+      { name: "Front-End Architecture", level: "core" },
+      { name: "GraphQL", level: "strong" },
+      { name: "RESTful APIs", level: "core" },
+      { name: "Firebase", level: "strong" },
+      { name: "Node.js", level: "strong" },
+      { name: "Express", level: "strong" },
+      { name: "WordPress", level: "working" },
+      { name: "Monorepo Management", level: "strong" },
+    ],
+  },
+  {
+    id: "tools",
+    title: "Tools & Practices",
+    skills: [
+      { name: "Git", level: "core" },
+      { name: "Figma", level: "strong" },
+      { name: "Storybook", level: "strong" },
+      { name: "Jest", level: "working" },
+      { name: "Testing Library", level: "working" },
+      { name: "Playwright", level: "working" },
+      { name: "PWA", level: "working" },
+      { name: "Agile / Scrum", level: "strong" },
+      { name: "Prompt Engineering", level: "strong" },
+    ],
   },
 ];
 
@@ -133,9 +216,25 @@ const techStackIcons = [
 const expCards = [
   {
     highlight:
+      "Delivered Gennova (Remotion) and a Next.js ecommerce storefront as an independent freelancer.",
+    imgPath: asset("images/logos/gennova.png"),
+    logoPath: asset("images/logos/gennova.png"),
+    company: "Freelance",
+    title: "Frontend Developer",
+    date: "2025 – Present",
+    location: "Remote",
+    responsibilities: [
+      "Built Gennova, an AI social media post creator, using Remotion to generate dynamic, template-driven video and motion graphics from React components.",
+      "Designed reusable Remotion compositions for branded social posts, enabling clients to produce consistent video content at scale.",
+      "Developed a full ecommerce storefront with Next.js, including product catalog, cart flow, and responsive UI optimized for performance.",
+      "Leveraged Next.js App Router, server components, and image optimization to deliver fast load times and a smooth shopping experience.",
+    ],
+  },
+  {
+    highlight:
       "Led the Hera project in collaboration with ESA and Microsoft on an AI-powered platform.",
-    imgPath: asset("images/exp1.png"),
-    logoPath: asset("images/logo1.png"),
+    imgPath: asset("images/logos/impactAi-logo.webp"),
+    logoPath: asset("images/logos/impact-ai.avif"),
     company: "Impact AI",
     title: "React Developer",
     date: "June 2024 – January 2026",
@@ -151,8 +250,8 @@ const expCards = [
   {
     highlight:
       "Rebuilt the entire platform and improved Lighthouse scores by 40% through performance optimization.",
-    imgPath: asset("images/exp2.png"),
-    logoPath: asset("images/logo2.png"),
+    imgPath: asset("images/logos/flightio.png"),
+    logoPath: asset("images/logos/flightio-logo.png"),
     company: "Flightio",
     title: "React Developer",
     date: "June 2022 – May 2024",
@@ -167,8 +266,8 @@ const expCards = [
   {
     highlight:
       "Built a meeting planner and task management web app with custom Jalali calendar support.",
-    imgPath: asset("images/exp3.png"),
-    logoPath: asset("images/logo3.png"),
+    imgPath: asset("images/logos/arsh.png"),
+    logoPath: asset("images/logos/arsh.png"),
     company: "Arsh",
     title: "Front-End Developer",
     date: "March 2021 – July 2022",
@@ -178,23 +277,27 @@ const expCards = [
       "Customized calendar libraries to support the Jalali (Persian) date system using Ant Design.",
     ],
   },
-  {
-    highlight:
-      "Delivered a scalable financial mobile app with modular architecture and Redux-Saga state management.",
-    imgPath: asset("images/exp4.png"),
-    logoPath: asset("images/logo4.png"),
-    company: "Inotec",
-    title: "React Native Developer",
-    date: "March 2019 – March 2020",
-    location: "Tehran, Iran",
-    responsibilities: [
-      "Built a scalable financial mobile app in React Native with a modular architecture focused on performance and maintainability.",
-      "Implemented Redux-Saga for robust async state management, improving data flow reliability and reducing side effects.",
-    ],
-  },
+  // {
+  //   highlight:
+  //     "Delivered a scalable financial mobile app with modular architecture and Redux-Saga state management.",
+  //   imgPath: asset("images/exp4.png"),
+  //   logoPath: asset("images/logo4.png"),
+  //   company: "Inotec",
+  //   title: "React Native Developer",
+  //   date: "March 2019 – March 2020",
+  //   location: "Tehran, Iran",
+  //   responsibilities: [
+  //     "Built a scalable financial mobile app in React Native with a modular architecture focused on performance and maintainability.",
+  //     "Implemented Redux-Saga for robust async state management, improving data flow reliability and reducing side effects.",
+  //   ],
+  // },
 ];
 
 const expLogos = [
+  {
+    name: "Freelance",
+    imgPath: asset("images/logos/gennova.png"),
+  },
   {
     name: "Impact AI",
     imgPath: asset("images/logo1.png"),
@@ -241,5 +344,6 @@ export {
   socialImgs,
   techStackIcons,
   techStackImgs,
+  skillCategories,
   navLinks,
 };
