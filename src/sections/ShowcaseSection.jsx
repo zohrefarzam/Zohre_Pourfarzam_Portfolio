@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import { asset } from "../utils/asset";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -47,7 +48,7 @@ const AppShowcase = () => {
         <div className="showcaselayout">
           <div ref={impactAiRef} className="first-project-wrapper">
             <div className="image-wrapper">
-              <img src="/images/project1.png" alt="Impact AI Platform" />
+              <img src={asset("images/project1.png")} alt="Impact AI Platform" />
             </div>
             <div className="text-content">
               <h2>
@@ -65,7 +66,7 @@ const AppShowcase = () => {
             <div className="project" ref={flightioRef}>
               <div className="image-wrapper bg-[#FFEFDB]">
                 <img
-                  src="/images/project2.png"
+                  src={asset("images/project2.png")}
                   alt="Flightio Platform Rebuild"
                 />
               </div>
@@ -74,7 +75,7 @@ const AppShowcase = () => {
 
             <div className="project" ref={arshRef}>
               <div className="image-wrapper bg-[#FFE7EB]">
-                <img src="/images/project3.png" alt="Arsh Meeting Planner" />
+                <img src={asset("images/project3.png")} alt="Arsh Meeting Planner" />
               </div>
               <h2>Arsh Meeting Planner with Jalali Calendar</h2>
             </div>

@@ -1,3 +1,5 @@
+import { asset } from "../utils/asset";
+
 const navLinks = [
   {
     name: "Work",
@@ -18,14 +20,14 @@ const navLinks = [
 ];
 
 const words = [
-  { text: "Ideas", imgPath: "/images/ideas.svg" },
-  { text: "Designs", imgPath: "/images/designs.svg" },
-  { text: "Code", imgPath: "/images/code.svg" },
-  { text: "Products", imgPath: "/images/concepts.svg" },
-  { text: "Ideas", imgPath: "/images/ideas.svg" },
-  { text: "Designs", imgPath: "/images/designs.svg" },
-  { text: "Code", imgPath: "/images/code.svg" },
-  { text: "Products", imgPath: "/images/concepts.svg" },
+  { text: "Ideas", imgPath: asset("images/ideas.svg") },
+  { text: "Designs", imgPath: asset("images/designs.svg") },
+  { text: "Code", imgPath: asset("images/code.svg") },
+  { text: "Products", imgPath: asset("images/concepts.svg") },
+  { text: "Ideas", imgPath: asset("images/ideas.svg") },
+  { text: "Designs", imgPath: asset("images/designs.svg") },
+  { text: "Code", imgPath: asset("images/code.svg") },
+  { text: "Products", imgPath: asset("images/concepts.svg") },
 ];
 
 const counterItems = [
@@ -38,35 +40,35 @@ const counterItems = [
 const logoIconsList = [
   {
     name: "Impact AI",
-    imgPath: "/images/logo1.png",
+    imgPath: asset("images/logo1.png"),
   },
   {
     name: "Flightio",
-    imgPath: "/images/logo2.png",
+    imgPath: asset("images/logo2.png"),
   },
   {
     name: "Arsh",
-    imgPath: "/images/logo3.png",
+    imgPath: asset("images/logo3.png"),
   },
   {
     name: "Inotec",
-    imgPath: "/images/logo4.png",
+    imgPath: asset("images/logo4.png"),
   },
 ];
 
 const abilities = [
   {
-    imgPath: "/images/seo.png",
+    imgPath: asset("images/seo.png"),
     title: "Front-end Architecture",
     desc: "Scalable component design, monorepo structure, and reusable UI systems.",
   },
   {
-    imgPath: "/images/chat.png",
+    imgPath: asset("images/chat.png"),
     title: "Cross-functional Collaboration",
     desc: "Working effectively with international teams and communicating in English.",
   },
   {
-    imgPath: "/images/time.png",
+    imgPath: asset("images/time.png"),
     title: "Performance Optimization",
     desc: "Core Web Vitals, SSR, code splitting, and measurable speed improvements.",
   },
@@ -75,54 +77,54 @@ const abilities = [
 const techStackImgs = [
   {
     name: "React / Next.js",
-    imgPath: "/images/logos/react.png",
+    imgPath: asset("images/logos/react.png"),
   },
   {
     name: "TypeScript",
-    imgPath: "/images/code.svg",
+    imgPath: asset("images/code.svg"),
   },
   {
     name: "React Native",
-    imgPath: "/images/logos/react.png",
+    imgPath: asset("images/logos/react.png"),
   },
   {
     name: "Tailwind CSS",
-    imgPath: "/images/designs.svg",
+    imgPath: asset("images/designs.svg"),
   },
   {
     name: "GraphQL / Node.js",
-    imgPath: "/images/logos/node.png",
+    imgPath: asset("images/logos/node.png"),
   },
 ];
 
 const techStackIcons = [
   {
     name: "React Developer",
-    modelPath: "/models/react_logo-transformed.glb",
+    modelPath: asset("models/react_logo-transformed.glb"),
     scale: 1,
     rotation: [0, 0, 0],
   },
   {
     name: "Python Developer",
-    modelPath: "/models/python-transformed.glb",
+    modelPath: asset("models/python-transformed.glb"),
     scale: 0.8,
     rotation: [0, 0, 0],
   },
   {
     name: "Backend Developer",
-    modelPath: "/models/node-transformed.glb",
+    modelPath: asset("models/node-transformed.glb"),
     scale: 5,
     rotation: [0, -Math.PI / 2, 0],
   },
   {
     name: "Interactive Developer",
-    modelPath: "/models/three.js-transformed.glb",
+    modelPath: asset("models/three.js-transformed.glb"),
     scale: 0.05,
     rotation: [0, 0, 0],
   },
   {
     name: "Project Manager",
-    modelPath: "/models/git-svg-transformed.glb",
+    modelPath: asset("models/git-svg-transformed.glb"),
     scale: 0.05,
     rotation: [0, -Math.PI / 4, 0],
   },
@@ -132,8 +134,8 @@ const expCards = [
   {
     highlight:
       "Led the Hera project in collaboration with ESA and Microsoft on an AI-powered platform.",
-    imgPath: "/images/exp1.png",
-    logoPath: "/images/logo1.png",
+    imgPath: asset("images/exp1.png"),
+    logoPath: asset("images/logo1.png"),
     company: "Impact AI",
     title: "React Developer",
     date: "June 2024 – January 2026",
@@ -149,8 +151,8 @@ const expCards = [
   {
     highlight:
       "Rebuilt the entire platform and improved Lighthouse scores by 40% through performance optimization.",
-    imgPath: "/images/exp2.png",
-    logoPath: "/images/logo2.png",
+    imgPath: asset("images/exp2.png"),
+    logoPath: asset("images/logo2.png"),
     company: "Flightio",
     title: "React Developer",
     date: "June 2022 – May 2024",
@@ -165,8 +167,8 @@ const expCards = [
   {
     highlight:
       "Built a meeting planner and task management web app with custom Jalali calendar support.",
-    imgPath: "/images/exp3.png",
-    logoPath: "/images/logo3.png",
+    imgPath: asset("images/exp3.png"),
+    logoPath: asset("images/logo3.png"),
     company: "Arsh",
     title: "Front-End Developer",
     date: "March 2021 – July 2022",
@@ -179,8 +181,8 @@ const expCards = [
   {
     highlight:
       "Delivered a scalable financial mobile app with modular architecture and Redux-Saga state management.",
-    imgPath: "/images/exp4.png",
-    logoPath: "/images/logo4.png",
+    imgPath: asset("images/exp4.png"),
+    logoPath: asset("images/logo4.png"),
     company: "Inotec",
     title: "React Native Developer",
     date: "March 2019 – March 2020",
@@ -195,19 +197,19 @@ const expCards = [
 const expLogos = [
   {
     name: "Impact AI",
-    imgPath: "/images/logo1.png",
+    imgPath: asset("images/logo1.png"),
   },
   {
     name: "Flightio",
-    imgPath: "/images/logo2.png",
+    imgPath: asset("images/logo2.png"),
   },
   {
     name: "Arsh",
-    imgPath: "/images/logo3.png",
+    imgPath: asset("images/logo3.png"),
   },
   {
     name: "Inotec",
-    imgPath: "/images/logo4.png",
+    imgPath: asset("images/logo4.png"),
   },
 ];
 
@@ -223,7 +225,7 @@ const educationCards = [
 const socialImgs = [
   {
     name: "GitHub",
-    imgPath: "/images/github.svg",
+    imgPath: asset("images/github.svg"),
     url: "https://github.com/zohrefarzam",
   },
 ];
