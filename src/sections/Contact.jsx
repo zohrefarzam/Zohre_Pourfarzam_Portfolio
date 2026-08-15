@@ -3,7 +3,7 @@ import QRCode from "react-qr-code";
 import TitleHeader from "../components/TitleHeader";
 import { asset } from "../utils/asset";
 
-const resumePdfPath = asset("pdf/Zohre_Pourfarzam_Resume.pdf");
+const resumePdfPath = asset("pdf/Zohre_Pourfarzam_ir.pdf");
 
 const contactLinks = [
   {
@@ -12,11 +12,11 @@ const contactLinks = [
     href: "https://mail.google.com/mail/?view=cm&fs=1&to=zohrefarzam@gmail.com",
     external: true,
   },
-  {
-    label: "Phone",
-    value: "+98 902 199 9724",
-    href: "tel:+989021999724",
-  },
+  // {
+  //   label: "Phone",
+  //   value: "+98 902 199 9724",
+  //   href: "tel:+989021999724",
+  // },
   {
     label: "GitHub",
     value: "github.com/zohrefarzam",
@@ -94,7 +94,7 @@ const Contact = () => {
                   </p>
                   <a
                     href={resumePdfPath}
-                    download="Zohre_Pourfarzam_Resume.pdf"
+                    download="Zohre_Pourfarzam_ir.pdf"
                     className="group inline-flex items-center gap-3 text-lg font-semibold text-white transition-colors hover:text-white-50 w-fit"
                   >
                     <span className="relative">
